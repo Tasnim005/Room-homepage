@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Dark-Gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2.9rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--Dark-Gray);
+  line-height: 1.4;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger img {
+  width: 20px;
+  height: 14px;
+}
+
+.logo {
+  color: var(--White);
+}
+
+ul {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#close {
+  display: none;
+  cursor: pointer;
+}
+
+#close img {
+  width: 16px;
+  height: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--White);
+}
+
+li a:hover {
+  border-bottom: 2px solid var(--White);
+  padding-bottom: 0.3rem;
+}
+
+.controls {
+  align-self: flex-end;
+  display: flex;
+  margin-right: -156px;
+  z-index: 2;
+}
+
+#previous,
+#next {
+  background: var(--Black);
+  padding: 1.5em 2rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+#previous:hover,
+#next:hover {
+  background: var(--Very-Dark-Gray);
+}
+
+aside {
+  padding: 6rem 5rem;
+}
+
+.cta {
+  margin-block: 1.5rem;
+}
+
+.cta a {
+  color: var(--Black);
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.cta:hover a {
+  color: var(--Dark-Gray);
+}
+
+.cta img {
+  width: 40px;
+  height: 12px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  place-content: center;
+}
+
+.container:nth-of-type(2) {
+  align-self: center;
+  padding: 3rem;
+}
+
+footer {
+  width: 90%;
+  margin: 1rem auto;
+}
+.attribution {
+  color: #000;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.attribution a {
+  color: #158f7f;
+  text-decoration: none;
+}
+
+@media (max-width: 1140px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container:nth-of-type(2) {
+    order: -1;
+    padding-inline: 5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    min-height: 45vh;
+  }
+
+  .controls {
+    margin-right: 0;
+  }
+
+  #previous,
+  #next {
+    background: var(--Black);
+    padding: 1rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  aside {
+    padding: 3.5rem 3rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .container:nth-of-type(2) {
+    padding-inline: 3rem;
+  }
+}
+
+@media (max-width: 766px) {
+  .container:nth-of-type(1) {
+    order: -1;
+  }
+}
+
+
+@media (max-width: 500px) {
+  nav {
+    justify-content: start;
+    padding: 2.5rem;
+  }
+
+  .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  ul {
+    display: none;
+  }
+
+  li a {
+    color: black;
+    font-weight: 600;
+  }
+
+  li a:hover {
+    border-bottom: 2px solid var(--Black);
+  }
+}
+
+/* Navigation */
+ul.clicked {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 14vh;
+  background: var(--White);
+  color: var(--Black);
+}
+
+#close.clicked {
+  display: block;
+}
